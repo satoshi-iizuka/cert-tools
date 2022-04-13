@@ -13,7 +13,7 @@ EOL
   exit 1
 fi
 
-CA_CN=$1
+CA_CN="$1"
 CA_KEY="${CA_CN}.key"
 CA_CERT="${CA_CN}.pem"
 
@@ -38,7 +38,7 @@ openssl req \
   -nodes \
   -key "${CA_KEY}" \
   -sha256 \
-  -days 1825\
+  -days 1825 \
   -out "${CA_CERT}" \
   -subj "/C=JP/ST=Tokyo/L=Tokyo/O=Private/CN=${CA_CN}"
 
